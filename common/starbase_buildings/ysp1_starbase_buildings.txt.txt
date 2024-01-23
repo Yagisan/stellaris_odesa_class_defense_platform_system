@@ -1,0 +1,52 @@
+odesa_class_defense_platform_system = {
+	icon = "GFX_starbase_defense_grid_supercomputer"
+	construction_days = 360
+	potential = {
+		exists = owner
+		owner = {
+			is_ai = no
+		}
+	}
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_starport_or_ring"
+			OR = {
+				has_starbase_size >= starbase_starport
+				is_orbital_ring = yes
+			}
+		}
+		owner = {
+			count_starbase_buildings = {
+				type = odesa_class_defense_platform_system
+				count < 1
+				include_being_constructed = yes
+			}
+		}
+	}
+	abort_construction_trigger = {
+		owner = {
+			count_starbase_buildings = {
+				type = odesa_class_defense_platform_system
+				count > 1
+				include_being_constructed = yes
+			}
+		}
+	}
+	resources = {
+		category = starbase_buildings
+		cost = {
+			alloys = 150
+		}
+		upkeep = {
+			energy = 2
+		}
+	}
+	station_modifier = {
+		starbase_defense_platform_capacity_add = 100
+	}
+	ai_build_at_chokepoint = yes
+	ai_build_outside_chokepoint = no
+	ai_weight = {
+		weight = 0
+	}
+}
