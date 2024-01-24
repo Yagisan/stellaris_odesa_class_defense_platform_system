@@ -15,22 +15,6 @@ odesa_class_defense_platform_system = {
 				is_orbital_ring = yes
 			}
 		}
-		owner = {
-			count_starbase_buildings = {
-				type = odesa_class_defense_platform_system
-				count < 1
-				include_being_constructed = yes
-			}
-		}
-	}
-	abort_construction_trigger = {
-		owner = {
-			count_starbase_buildings = {
-				type = odesa_class_defense_platform_system
-				count > 1
-				include_being_constructed = yes
-			}
-		}
 	}
 	resources = {
 		category = starbase_buildings
